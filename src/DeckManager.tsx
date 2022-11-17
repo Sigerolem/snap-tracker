@@ -30,8 +30,10 @@ export function DeckManager({ decks, addDeck, deleteDeckFunction, setPage }: Dec
 
   return (
     <section className="deckManager">
-      <label htmlFor="newDeck">Type a name to add a new deck:</label>
-      <input spellCheck={false} id="newDeck" maxLength={32} value={deckName} onChange={e => { handleInput(e.target.value) }} type="text" />
+      <div className="inputDiv">
+        <label htmlFor="newDeck" style={deckName === '' ? {} : {top: '-2rem'}} >New deck name:</label>
+        <input spellCheck={false} id="newDeck" maxLength={32} value={deckName} onChange={e => { handleInput(e.target.value) }} type="text" />
+      </div>
       <button onClick={handleAddDeck}>Add deck</button>
       <div className="tableContainer">
         <table>

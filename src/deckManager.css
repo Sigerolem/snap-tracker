@@ -7,23 +7,37 @@
   "b c"
   "d d";
   grid-template-rows: 3rem 4.5rem auto;
+  margin-top: 2.5rem;
+}
+
+.deckManager .inputDiv {
+  position: relative;
 }
 
 .deckManager label {
+  font-weight: 300;
+  color: #DDD;
   grid-area: a;
-  justify-self: center;
+  margin-left: .5rem;
+  justify-self: start;
   align-self: center;
+  position: absolute;
+  left: 0;
+  top: 10px;
+  transition: top .3s ease;
 }
 
 .deckManager input {
   border: 0;
   font-size: 1.5rem;
-  border-radius: .5rem;
   height: 3rem;
   padding: .25rem;
   width: 100%;
   max-width: 30rem;
-  justify-self: center;
+  background-color: rgb(36, 34, 46);
+  border-bottom: 1px solid white;
+  color: white;
+  justify-self: start;
   align-self: center;
 }
 
@@ -64,6 +78,7 @@
 @media (max-width: 600px) {
   .deckManager {
     grid-template-rows: 2.5rem 3rem auto;
+    grid-template-columns: 2fr 1fr;
   }
 
   .deckManager .tableContainer {
