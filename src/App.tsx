@@ -51,6 +51,9 @@ export function App() {
     }
     localStorage.setItem('decks', JSON.stringify(decks))
     localStorage.setItem('history', JSON.stringify(history))
+    if (decks.length === 0) {
+      setPage(2)
+    }
   }, [decks, history])
 
   useEffect(() => {
