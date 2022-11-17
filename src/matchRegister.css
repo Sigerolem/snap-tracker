@@ -1,0 +1,166 @@
+.tabs {
+  width: 90%;
+  max-width: 600px;
+  display: flex;
+  overflow: hidden;
+  border-top-left-radius: .5rem;
+  border-top-right-radius: .5rem;
+}
+
+.tabs button {
+  background-color: #234;
+  width: 50%;
+  font-size: 1.5rem;
+  height: 3rem;
+  border: 0;
+  color: white;
+  font-weight: 600;
+}
+
+.tabs button.inactive {
+  background-color: #345;
+  color: #CCC;
+}
+
+.matchRegister {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.matchRegister label {
+  font-size: 1.5rem;
+  margin-bottom: .5rem;
+}
+
+.matchRegister select {
+  max-width: 600px;
+  font-size: 1.25rem;
+  width: 80%;
+  text-align: center;
+  height: 2rem; 
+  margin-bottom: 1.5rem ;
+}
+
+.matchRegister p {
+  margin-bottom: .5rem;
+}
+
+.matchRegister .buttons {
+  background-color: #234;
+  width: 90%;
+  max-width: 600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  gap:.5rem .5rem;
+  padding: .5rem;
+  margin-bottom: .5rem;
+  border-bottom-left-radius: .5rem;
+  border-bottom-right-radius: .5rem;
+}
+
+.matchRegister .buttons button {
+  height: 3.5rem;
+  width: 100%;
+  border: 0;
+  border-radius: .25rem;
+  font-weight: 500;
+  font-size: 1.5rem;
+  transition: scale .2s, filter .2s;
+}
+
+.matchRegister .buttons button:active {
+  scale: .95;
+  filter: brightness(.7);
+}
+
+.green {
+  background-color: rgb(57, 214, 57);
+}
+
+.red {
+  background-color: rgb(252, 71, 71);
+}
+
+.feedback {
+  position: relative;
+}
+
+.first {
+  animation: first .2s ease-in-out;
+}
+
+.second {
+  animation: second .2s ease-in-out;
+}
+
+.third {
+  animation: third .2s ease-in-out;
+  opacity: 0;
+}
+
+@keyframes first {
+  0% {
+    transform: translateY(-3.5rem);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes second {
+  0% {
+    transform: translateY(-3.5rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes third {
+  0% {
+    transform: translateY(-3.5rem);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+
+.matchRegister table {
+  border-spacing: .5rem;
+  border: 0;
+  width: 100%;
+  max-width: 800px;
+}
+
+.matchRegister th, .matchRegister td {
+  text-align: center;
+  width: 18rem;
+}
+
+.matchRegister th {
+  color: #FFF;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.matchRegister td {
+  color: #CCC;
+  font-weight: 400;
+  height: 3.5rem;
+}
+
+.matchRegister th + th, .matchRegister td + td {
+  width: 8rem;
+}

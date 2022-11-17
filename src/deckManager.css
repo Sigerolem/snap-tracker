@@ -1,0 +1,93 @@
+.deckManager {
+  width: 100%;
+  max-width: 900px;
+  display: grid;
+  grid-template-areas: 
+  "a a"
+  "b c"
+  "d d";
+  grid-template-rows: 3rem 4.5rem auto;
+}
+
+.deckManager label {
+  grid-area: a;
+  justify-self: center;
+  align-self: center;
+}
+
+.deckManager input {
+  border: 0;
+  font-size: 1.5rem;
+  border-radius: .5rem;
+  height: 3rem;
+  padding: .25rem;
+  width: 100%;
+  max-width: 30rem;
+  justify-self: center;
+  align-self: center;
+}
+
+.deckManager > button {
+  background-color: #234;
+  border: 0;
+  border-radius: .25rem;
+  color: white;
+  width: 100%;
+  max-width: 10rem;
+  justify-self: end;
+  align-self: center;
+  height: 3.5rem;
+}
+
+.deckManager .tableContainer {
+  grid-area: d;
+}
+
+.deckManager table {
+  width: 100%;
+  text-align: center;
+}
+
+.deckManager th {
+  text-decoration: underline;
+  height: 3rem;
+}
+
+.deckManager th:first-child {
+  width: 15rem;
+}
+
+.deckManager td {
+  height: 3rem;
+}
+
+@media (max-width: 600px) {
+  .deckManager {
+    grid-template-rows: 2.5rem 3rem auto;
+  }
+
+  .deckManager .tableContainer {
+    grid-area: d;
+    overflow-x: scroll;
+  }
+
+  .deckManager input {
+    width: 100%;
+    max-width: 15rem;
+    height: 2.5rem;
+    align-self: center;
+  }
+  
+  .deckManager > button {
+    height: 3rem;
+    width: 7rem;
+    align-self: center;
+  }
+
+  .deckManager table {
+    min-width: 40rem;
+    overflow-x: scroll;
+    padding-right: 1.5rem;
+    padding-top: 1rem;
+  }
+}

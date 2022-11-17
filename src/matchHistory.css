@@ -1,0 +1,69 @@
+.history {
+  width: 90%;
+  max-width: 800px;
+  display: grid;
+  grid-template-areas:
+  "a b"
+  "c c" ;
+  grid-template-rows: 4rem auto;
+  gap: .5rem;
+  align-items: center;
+}
+
+.history span {
+  font-size: 1.5rem;
+}
+
+.history button {
+  border: 0;
+  border-radius: .5rem;
+  padding: .5rem;
+  color: white;
+  background-color: #234;
+  width: 90%;
+  max-width: 15rem;
+  justify-self: end;
+  transition: filter .2s, scale .2s;
+}
+
+.history button:active {
+  filter: brightness(.9);
+  scale: .95;
+}
+
+.history table {
+  grid-area: c;
+  width: 100%;
+  text-align: center;
+}
+
+.history th {
+  text-decoration: underline;
+  height: 3rem;
+}
+
+.history th:first-child {
+  width: 15rem;
+}
+
+.history td {
+  height: 3rem;
+}
+
+@media (max-width: 600px) {
+  .history span {
+    font-size: 1.25rem;
+  }
+
+  .history th:first-child {
+    width: 10rem;
+  }
+
+  .history td {
+    height: 3.5rem;
+  }
+
+  .history th:last-child, .history td:last-child {
+    display: none;
+  }
+}
