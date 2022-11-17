@@ -37,11 +37,15 @@
 
 .matchRegister select {
   max-width: 600px;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   width: 80%;
   text-align: center;
-  height: 2rem; 
-  margin-bottom: 1.5rem ;
+  height: 2.5rem; 
+  margin-bottom: 1.5rem;
+  border-radius: .5rem;
+  background-color: #234;
+  border: 0;
+  color: white;
 }
 
 .matchRegister p {

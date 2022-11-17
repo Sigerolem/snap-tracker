@@ -64,7 +64,7 @@ export function App() {
     } else {
       return
     }
-    
+
     return () => {
       modal.addEventListener('click', e => {
         if (backupPoppedUp) {
@@ -194,16 +194,18 @@ export function App() {
   return (
     <>
       <header className='menu' >
-        <button onClick={() => setPage(0)} className={page === 0 ? 'active' : ''}>Home</button>
-        <button onClick={() => setPage(1)} className={page === 1 ? 'active' : ''}>History</button>
-        <button onClick={() => setPage(2)} className={page === 2 ? 'active' : ''}>Decks</button>
-        <button onClick={handleBackupPopOver} className={page === 2 ? 'active' : ''}>
-          <MdOutlineRestore />
-        </button>
-        <div className='backupPopUp' style={backupPoppedUp ? { display: '' } : { display: 'none' }} >
-          <div>
-            <button onClick={backup} >Backup data to clipboard</button>
-            <button onClick={restore} >Restore data from clipboard</button>
+        <div className='menuButtons'>
+          <button onClick={() => setPage(0)} className={page === 0 ? 'active' : ''}>Home</button>
+          <button onClick={() => setPage(1)} className={page === 1 ? 'active' : ''}>History</button>
+          <button onClick={() => setPage(2)} className={page === 2 ? 'active' : ''}>Decks</button>
+          <button onClick={handleBackupPopOver}>
+            <MdOutlineRestore />
+          </button>
+          <div className='backupPopUp' style={backupPoppedUp ? { display: '' } : { display: 'none' }} >
+            <div>
+              <button onClick={backup} >Backup data to clipboard</button>
+              <button onClick={restore} >Restore data from clipboard</button>
+            </div>
           </div>
         </div>
       </header>
