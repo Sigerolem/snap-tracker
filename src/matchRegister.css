@@ -94,16 +94,20 @@
   position: relative;
 }
 
-.first {
-  animation: first .2s ease-in-out;
+.firstA {
+  animation: first .15s ease-in-out;
 }
 
-.second {
-  animation: second .2s ease-in-out;
+.secondA {
+  animation: second .15s ease-in-out;
+}
+
+.thirdA {
+  animation: third .15s ease-in-out;
+  opacity: 0;
 }
 
 .third {
-  animation: third .2s ease-in-out;
   opacity: 0;
 }
 

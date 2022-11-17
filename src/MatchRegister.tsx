@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Deck, Match } from "./App"
 import "./matchRegister.css"
 
@@ -12,9 +12,15 @@ interface MatchRegsterProps {
 export function MatchRegister({ addMatch, setSelectedDeck, decks, history }: MatchRegsterProps) {
   const [selectedtab, setSelectedTab] = useState(1)
 
+  const [shouldAnimate, setShouldAnimate] = useState(false)
+
   function handleAddMatch(cubes: number) {
     navigator.vibrate(40)
     addMatch(cubes)
+    setShouldAnimate(true)
+    setTimeout(() => {
+      setShouldAnimate(false)
+    }, 250)
   }
 
   return (
@@ -66,24 +72,24 @@ export function MatchRegister({ addMatch, setSelectedDeck, decks, history }: Mat
               <th>Cubes</th>
             </tr>
             {
-              history[0] !== undefined && 
-              <tr className="first" key={`${history[0]?.id} ${history[0]?.deck}`}>
+              history[0] !== undefined &&
+              <tr className={shouldAnimate ? "firstA" : "first"} key={`${history[0]?.id} ${history[0]?.deck}`}>
                 <td>{history[0]?.deck}</td>
                 <td>{history[0]?.result}</td>
                 <td>{history[0]?.cubes}</td>
               </tr>
             }
             {
-              history[1] !== undefined && 
-              <tr className="second" key={`${history[1]?.id} ${history[1]?.deck}`}>
+              history[1] !== undefined &&
+              <tr className={shouldAnimate ? "secondA" : "second"} key={`${history[1]?.id} ${history[1]?.deck}`}>
                 <td>{history[1]?.deck}</td>
                 <td>{history[1]?.result}</td>
                 <td>{history[1]?.cubes}</td>
               </tr>
             }
             {
-              history[2] !== undefined && 
-              <tr className="third" key={`${history[2]?.id} ${history[2]?.deck}`}>
+              history[2] !== undefined &&
+              <tr className={shouldAnimate ? "thirdA" : "third"} key={`${history[2]?.id} ${history[2]?.deck}`}>
                 <td>{history[2]?.deck}</td>
                 <td>{history[2]?.result}</td>
                 <td>{history[2]?.cubes}</td>
